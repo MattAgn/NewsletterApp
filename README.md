@@ -6,10 +6,10 @@ It is a single screen app where you can enter an email to subscribe to a newslet
 
 This project contains two different versions of the same app :
 
-- a basic version : using nothing but internal state and basic components
-- a complex version : using formik, redux and sagas
+- a basic version: using nothing but internal state and basic components
+- a complex version: using formik, redux and sagas
 
-To switch versions, go to the [index]('./index.js') and use the App component corresponding to the version you want to use
+To switch versions, go to the [index](./index.js) and use the App component corresponding to the version you want to use
 
 # Install the app
 
@@ -18,16 +18,30 @@ Clone the repo and then, at its root, run
 or
 `npm i`
 
-Then open up a simulator or connect a real device and run
-`react-native-run-ios`
-or
-`react-native-run-android`
+## To run it on ios
+
+Then open up a simulator or connect a real device and run at the root of the project:
+
+```
+cd ios
+pod install
+cd ..
+react-native run-ios
+```
+
+## To run it on android
+
+Then open up a simulator or connect a real device and run at the root of the project:
+
+```
+react-native run-android
+```
 
 # Tests
 
 ## Write the first test
 
-Go to [this file]('./src/basic-version/pages/Home/__tests__/Home.test.tsx') and follow this [article]()
+Go to [this file](./src/basic-version/pages/Home/__tests__/Home.test.tsx) and follow this [article]()
 
 ## Run the tests
 
