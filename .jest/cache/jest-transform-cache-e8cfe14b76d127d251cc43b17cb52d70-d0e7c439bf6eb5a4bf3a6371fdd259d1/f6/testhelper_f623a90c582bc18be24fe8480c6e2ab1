@@ -1,0 +1,29 @@
+c28f662c5cfc9e328d7c3fdc5492ae93
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const react_native_testing_library_1 = require("react-native-testing-library");
+const react_redux_1 = require("react-redux");
+const store_1 = require("../complex-version/modules/store");
+const Toaster_1 = require("../components/Toaster");
+const redux_1 = require("redux");
+const reducer_1 = require("../complex-version/modules/reducer");
+const saga_1 = __importDefault(require("../complex-version/modules/saga"));
+exports.renderPage = (page) => {
+    const store = redux_1.createStore(reducer_1.rootReducer, redux_1.applyMiddleware(store_1.sagaMiddleware));
+    store_1.sagaMiddleware.run(saga_1.default);
+    return react_native_testing_library_1.render(react_1.default.createElement(react_redux_1.Provider, { store: store },
+        page,
+        react_1.default.createElement(Toaster_1.Toaster, null)));
+};
+exports.getPropsWithNavigation = (props, navigationPropExtension) => ({
+    ...props,
+    navigation: {
+        navigate: jest.fn(),
+        ...navigationPropExtension,
+    },
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL21hdHRoaWV1L3Byb2plY3RzL2xlYXJuaW5nL05ld3NsZXR0ZXJBcHAvc3JjL3V0aWxzL3Rlc3QuaGVscGVyLnRzeCIsIm1hcHBpbmdzIjoiOzs7OztBQUFBLGtEQUE0QztBQUM1QywrRUFBc0Q7QUFDdEQsNkNBQXVDO0FBR3ZDLDREQUFrRTtBQUNsRSxtREFBZ0Q7QUFDaEQsaUNBQXFEO0FBQ3JELGdFQUFpRTtBQUNqRSwyRUFBdUQ7QUFFMUMsUUFBQSxVQUFVLEdBQUcsQ0FBQyxJQUFrQixFQUFFLEVBQUU7SUFDL0MsTUFBTSxLQUFLLEdBQUcsbUJBQVcsQ0FBQyxxQkFBVyxFQUFFLHVCQUFlLENBQUMsc0JBQWMsQ0FBQyxDQUFDLENBQUM7SUFDeEUsc0JBQWMsQ0FBQyxHQUFHLENBQUMsY0FBUSxDQUFDLENBQUM7SUFFN0IsT0FBTyxxQ0FBTSxDQUNYLDhCQUFDLHNCQUFRLElBQUMsS0FBSyxFQUFFLEtBQUs7UUFDbkIsSUFBSTtRQUNMLDhCQUFDLGlCQUFPLE9BQUcsQ0FDRixDQUNaLENBQUM7QUFDSixDQUFDLENBQUM7QUFFVyxRQUFBLHNCQUFzQixHQUFHLENBQ3BDLEtBQVcsRUFDWCx1QkFBNkIsRUFDTixFQUFFLENBQ3pCLENBQUM7SUFDQyxHQUFHLEtBQUs7SUFDUixVQUFVLEVBQUU7UUFDVixRQUFRLEVBQUUsSUFBSSxDQUFDLEVBQUUsRUFBRTtRQUNuQixHQUFHLHVCQUF1QjtLQUMzQjtDQUNNLENBQUEsQ0FBQyIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvVXNlcnMvbWF0dGhpZXUvcHJvamVjdHMvbGVhcm5pbmcvTmV3c2xldHRlckFwcC9zcmMvdXRpbHMvdGVzdC5oZWxwZXIudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBSZWFjdEVsZW1lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyByZW5kZXIgfSBmcm9tICdyZWFjdC1uYXRpdmUtdGVzdGluZy1saWJyYXJ5JztcbmltcG9ydCB7IFByb3ZpZGVyIH0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHsgTmF2aWdhdGlvblNjcmVlblByb3BzIH0gZnJvbSAncmVhY3QtbmF2aWdhdGlvbic7XG5cbmltcG9ydCB7IHNhZ2FNaWRkbGV3YXJlIH0gZnJvbSAnLi4vY29tcGxleC12ZXJzaW9uL21vZHVsZXMvc3RvcmUnO1xuaW1wb3J0IHsgVG9hc3RlciB9IGZyb20gJy4uL2NvbXBvbmVudHMvVG9hc3Rlcic7XG5pbXBvcnQgeyBjcmVhdGVTdG9yZSwgYXBwbHlNaWRkbGV3YXJlIH0gZnJvbSAncmVkdXgnO1xuaW1wb3J0IHsgcm9vdFJlZHVjZXIgfSBmcm9tICcuLi9jb21wbGV4LXZlcnNpb24vbW9kdWxlcy9yZWR1Y2VyJztcbmltcG9ydCB3YXRjaEFsbCBmcm9tICcuLi9jb21wbGV4LXZlcnNpb24vbW9kdWxlcy9zYWdhJztcblxuZXhwb3J0IGNvbnN0IHJlbmRlclBhZ2UgPSAocGFnZTogUmVhY3RFbGVtZW50KSA9PiB7XG4gIGNvbnN0IHN0b3JlID0gY3JlYXRlU3RvcmUocm9vdFJlZHVjZXIsIGFwcGx5TWlkZGxld2FyZShzYWdhTWlkZGxld2FyZSkpO1xuICBzYWdhTWlkZGxld2FyZS5ydW4od2F0Y2hBbGwpO1xuXG4gIHJldHVybiByZW5kZXIoXG4gICAgPFByb3ZpZGVyIHN0b3JlPXtzdG9yZX0+XG4gICAgICB7cGFnZX1cbiAgICAgIDxUb2FzdGVyIC8+XG4gICAgPC9Qcm92aWRlcj5cbiAgKTtcbn07XG5cbmV4cG9ydCBjb25zdCBnZXRQcm9wc1dpdGhOYXZpZ2F0aW9uID0gKFxuICBwcm9wcz86IGFueSxcbiAgbmF2aWdhdGlvblByb3BFeHRlbnNpb24/OiBhbnlcbik6IE5hdmlnYXRpb25TY3JlZW5Qcm9wcyA9PlxuICAoe1xuICAgIC4uLnByb3BzLFxuICAgIG5hdmlnYXRpb246IHtcbiAgICAgIG5hdmlnYXRlOiBqZXN0LmZuKCksXG4gICAgICAuLi5uYXZpZ2F0aW9uUHJvcEV4dGVuc2lvbixcbiAgICB9LFxuICB9IGFzIGFueSk7XG4iXSwidmVyc2lvbiI6M30=

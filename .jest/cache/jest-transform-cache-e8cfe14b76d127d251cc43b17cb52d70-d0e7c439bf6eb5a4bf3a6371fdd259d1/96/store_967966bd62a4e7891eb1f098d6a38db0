@@ -1,0 +1,15 @@
+2dbf80568c3c48c3f9050b1f9c9596a0
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const redux_1 = require("redux");
+const redux_devtools_extension_1 = require("redux-devtools-extension");
+const redux_saga_1 = __importDefault(require("redux-saga"));
+const reducer_1 = require("./reducer");
+const saga_1 = __importDefault(require("./saga"));
+exports.sagaMiddleware = redux_saga_1.default();
+exports.store = redux_1.createStore(reducer_1.rootReducer, redux_devtools_extension_1.composeWithDevTools(redux_1.applyMiddleware(exports.sagaMiddleware)));
+exports.sagaMiddleware.run(saga_1.default);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL21hdHRoaWV1L3Byb2plY3RzL2xlYXJuaW5nL05ld3NsZXR0ZXJBcHAvc3JjL2NvbXBsZXgtdmVyc2lvbi9tb2R1bGVzL3N0b3JlLnRzIiwibWFwcGluZ3MiOiI7Ozs7O0FBQUEsaUNBQXFEO0FBQ3JELHVFQUErRDtBQUMvRCw0REFBOEM7QUFFOUMsdUNBQXdDO0FBQ3hDLGtEQUE4QjtBQUVqQixRQUFBLGNBQWMsR0FBRyxvQkFBb0IsRUFBRSxDQUFDO0FBQ3hDLFFBQUEsS0FBSyxHQUFHLG1CQUFXLENBQUMscUJBQVcsRUFBRSw4Q0FBbUIsQ0FBQyx1QkFBZSxDQUFDLHNCQUFjLENBQUMsQ0FBQyxDQUFDLENBQUM7QUFFcEcsc0JBQWMsQ0FBQyxHQUFHLENBQUMsY0FBUSxDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL21hdHRoaWV1L3Byb2plY3RzL2xlYXJuaW5nL05ld3NsZXR0ZXJBcHAvc3JjL2NvbXBsZXgtdmVyc2lvbi9tb2R1bGVzL3N0b3JlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGFwcGx5TWlkZGxld2FyZSwgY3JlYXRlU3RvcmUgfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQgeyBjb21wb3NlV2l0aERldlRvb2xzIH0gZnJvbSAncmVkdXgtZGV2dG9vbHMtZXh0ZW5zaW9uJztcbmltcG9ydCBjcmVhdGVTYWdhTWlkZGxld2FyZSBmcm9tICdyZWR1eC1zYWdhJztcblxuaW1wb3J0IHsgcm9vdFJlZHVjZXIgfSBmcm9tICcuL3JlZHVjZXInO1xuaW1wb3J0IHdhdGNoQWxsIGZyb20gJy4vc2FnYSc7XG5cbmV4cG9ydCBjb25zdCBzYWdhTWlkZGxld2FyZSA9IGNyZWF0ZVNhZ2FNaWRkbGV3YXJlKCk7XG5leHBvcnQgY29uc3Qgc3RvcmUgPSBjcmVhdGVTdG9yZShyb290UmVkdWNlciwgY29tcG9zZVdpdGhEZXZUb29scyhhcHBseU1pZGRsZXdhcmUoc2FnYU1pZGRsZXdhcmUpKSk7XG5cbnNhZ2FNaWRkbGV3YXJlLnJ1bih3YXRjaEFsbCk7XG4iXSwidmVyc2lvbiI6M30=

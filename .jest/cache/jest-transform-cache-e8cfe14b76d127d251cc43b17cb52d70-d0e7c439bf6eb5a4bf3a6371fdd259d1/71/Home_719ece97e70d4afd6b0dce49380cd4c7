@@ -1,0 +1,25 @@
+45612c7c7dd8b79bbeaf46aff9f0390d
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const Button_1 = require("../../../components/Button");
+const react_redux_1 = require("react-redux");
+const actions_1 = require("../../modules/signup/actions");
+const formik_1 = require("formik");
+const Input_1 = require("../../../components/Input");
+const wording_1 = require("../../../utils/wording");
+const StyledComponents_1 = require("../../../components/StyledComponents");
+exports.Home = () => {
+    const dispatch = react_redux_1.useDispatch();
+    const onSubmit = ({ email }) => dispatch(actions_1.SignUpActions.subscribeNewsletter(email));
+    return (react_1.default.createElement(StyledComponents_1.Container, null,
+        react_1.default.createElement(StyledComponents_1.Card, null,
+            react_1.default.createElement(StyledComponents_1.Title, null, wording_1.wording.subscribe),
+            react_1.default.createElement(formik_1.Formik, { onSubmit: onSubmit, initialValues: { email: '' }, validateOnBlur: false, validateOnChange: false, render: ({ handleSubmit }) => (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Input_1.FormikInput, { placeholder: wording_1.wording.emailPlaceholder, name: "email" }),
+                    react_1.default.createElement(Button_1.Button, { title: wording_1.wording.validateEmail, onPress: handleSubmit }))) }))));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL21hdHRoaWV1L3Byb2plY3RzL2xlYXJuaW5nL05ld3NsZXR0ZXJBcHAvc3JjL2NvbXBsZXgtdmVyc2lvbi9wYWdlcy9Ib21lL0hvbWUudHN4IiwibWFwcGluZ3MiOiI7Ozs7O0FBQUEsa0RBQWlEO0FBRWpELHVEQUFvRDtBQUNwRCw2Q0FBMEM7QUFDMUMsMERBQTZEO0FBQzdELG1DQUFnQztBQUNoQyxxREFBd0Q7QUFDeEQsb0RBQWlEO0FBQ2pELDJFQUE4RTtBQU1qRSxRQUFBLElBQUksR0FBc0IsR0FBRyxFQUFFO0lBQzFDLE1BQU0sUUFBUSxHQUFHLHlCQUFXLEVBQUUsQ0FBQztJQUMvQixNQUFNLFFBQVEsR0FBRyxDQUFDLEVBQUUsS0FBSyxFQUFjLEVBQUUsRUFBRSxDQUFDLFFBQVEsQ0FBQyx1QkFBYSxDQUFDLG1CQUFtQixDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUM7SUFFL0YsT0FBTyxDQUNMLDhCQUFDLDRCQUFTO1FBQ1IsOEJBQUMsdUJBQUk7WUFDSCw4QkFBQyx3QkFBSyxRQUFFLGlCQUFPLENBQUMsU0FBUyxDQUFTO1lBQ2xDLDhCQUFDLGVBQU0sSUFDTCxRQUFRLEVBQUUsUUFBUSxFQUNsQixhQUFhLEVBQUUsRUFBRSxLQUFLLEVBQUUsRUFBRSxFQUFFLEVBQzVCLGNBQWMsRUFBRSxLQUFLLEVBQ3JCLGdCQUFnQixFQUFFLEtBQUssRUFDdkIsTUFBTSxFQUFFLENBQUMsRUFBRSxZQUFZLEVBQUUsRUFBRSxFQUFFLENBQUMsQ0FDNUI7b0JBR0UsOEJBQUMsbUJBQVcsSUFBQyxXQUFXLEVBQUUsaUJBQU8sQ0FBQyxnQkFBZ0IsRUFBRSxJQUFJLEVBQUMsT0FBTyxHQUFHO29CQUNuRSw4QkFBQyxlQUFNLElBQUMsS0FBSyxFQUFFLGlCQUFPLENBQUMsYUFBYSxFQUFFLE9BQU8sRUFBRSxZQUFZLEdBQUksQ0FDOUQsQ0FDSixHQUNELENBQ0csQ0FDRyxDQUNiLENBQUM7QUFDSixDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL21hdHRoaWV1L3Byb2plY3RzL2xlYXJuaW5nL05ld3NsZXR0ZXJBcHAvc3JjL2NvbXBsZXgtdmVyc2lvbi9wYWdlcy9Ib21lL0hvbWUudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBGdW5jdGlvbkNvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcblxuaW1wb3J0IHsgQnV0dG9uIH0gZnJvbSAnLi4vLi4vLi4vY29tcG9uZW50cy9CdXR0b24nO1xuaW1wb3J0IHsgdXNlRGlzcGF0Y2ggfSBmcm9tICdyZWFjdC1yZWR1eCc7XG5pbXBvcnQgeyBTaWduVXBBY3Rpb25zIH0gZnJvbSAnLi4vLi4vbW9kdWxlcy9zaWdudXAvYWN0aW9ucyc7XG5pbXBvcnQgeyBGb3JtaWsgfSBmcm9tICdmb3JtaWsnO1xuaW1wb3J0IHsgRm9ybWlrSW5wdXQgfSBmcm9tICcuLi8uLi8uLi9jb21wb25lbnRzL0lucHV0JztcbmltcG9ydCB7IHdvcmRpbmcgfSBmcm9tICcuLi8uLi8uLi91dGlscy93b3JkaW5nJztcbmltcG9ydCB7IENhcmQsIENvbnRhaW5lciwgVGl0bGUgfSBmcm9tICcuLi8uLi8uLi9jb21wb25lbnRzL1N0eWxlZENvbXBvbmVudHMnO1xuXG5pbnRlcmZhY2UgRW1haWxWYWx1ZSB7XG4gIGVtYWlsOiBzdHJpbmc7XG59XG5cbmV4cG9ydCBjb25zdCBIb21lOiBGdW5jdGlvbkNvbXBvbmVudCA9ICgpID0+IHtcbiAgY29uc3QgZGlzcGF0Y2ggPSB1c2VEaXNwYXRjaCgpO1xuICBjb25zdCBvblN1Ym1pdCA9ICh7IGVtYWlsIH06IEVtYWlsVmFsdWUpID0+IGRpc3BhdGNoKFNpZ25VcEFjdGlvbnMuc3Vic2NyaWJlTmV3c2xldHRlcihlbWFpbCkpO1xuXG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lcj5cbiAgICAgIDxDYXJkPlxuICAgICAgICA8VGl0bGU+e3dvcmRpbmcuc3Vic2NyaWJlfTwvVGl0bGU+XG4gICAgICAgIDxGb3JtaWtcbiAgICAgICAgICBvblN1Ym1pdD17b25TdWJtaXR9XG4gICAgICAgICAgaW5pdGlhbFZhbHVlcz17eyBlbWFpbDogJycgfX1cbiAgICAgICAgICB2YWxpZGF0ZU9uQmx1cj17ZmFsc2V9XG4gICAgICAgICAgdmFsaWRhdGVPbkNoYW5nZT17ZmFsc2V9XG4gICAgICAgICAgcmVuZGVyPXsoeyBoYW5kbGVTdWJtaXQgfSkgPT4gKFxuICAgICAgICAgICAgPD5cbiAgICAgICAgICAgICAgey8qIFxuICAgICAgICAgICAgICAvL0B0cy1pZ25vcmUgKi99XG4gICAgICAgICAgICAgIDxGb3JtaWtJbnB1dCBwbGFjZWhvbGRlcj17d29yZGluZy5lbWFpbFBsYWNlaG9sZGVyfSBuYW1lPVwiZW1haWxcIiAvPlxuICAgICAgICAgICAgICA8QnV0dG9uIHRpdGxlPXt3b3JkaW5nLnZhbGlkYXRlRW1haWx9IG9uUHJlc3M9e2hhbmRsZVN1Ym1pdH0gLz5cbiAgICAgICAgICAgIDwvPlxuICAgICAgICAgICl9XG4gICAgICAgIC8+XG4gICAgICA8L0NhcmQ+XG4gICAgPC9Db250YWluZXI+XG4gICk7XG59O1xuIl0sInZlcnNpb24iOjN9
